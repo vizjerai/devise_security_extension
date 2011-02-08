@@ -16,14 +16,33 @@ module Devise # :nodoc:
 
       module InstanceMethods # :nodoc:
 
-        private
-
-        def archive_password
-          if self.encrypted_password_changed?
-            self.old_passwords.create! :encrypted_password => self.encrypted_password_change.first, :password_salt => self.password_salt_change.first
+        # validate is the password in archive
+        def password_archive_included?
+          unless self.password.nil?
+            self.old_passwords.each do |old_password|
+              dummy = self.class.new
+              dummy.encrypted_password = old_password.encrypted_password
+              dummy.password_salt = old_password.password_salt
+              return true if dummy.valid_password?(self.password)
+            end
           end
+
+          false
         end
 
+        private
+
+        # archive the last password before save and delete all to old passwords from archive
+        def archive_password
+          if self.encrypted_password_changed?
+            if self.class.password_archiving_count.to_i > 0
+              self.old_passwords.create! :encrypted_password => self.encrypted_password_change.first, :password_salt => self.password_salt_change.first
+              self.old_passwords.order('created_at DESC').offset(self.class.password_archiving_count).destroy_all
+            else
+              self.old_passwords.destroy_all
+            end
+          end
+        end
       end
 
       module ClassMethods #:nodoc:
