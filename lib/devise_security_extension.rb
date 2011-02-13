@@ -19,7 +19,9 @@ module Devise # :nodoc:
   mattr_accessor :password_archiving_count
   @@password_archiving_count = 5
 
-
+  # deny old password (true, false, integer)
+  mattr_accessor :deny_old_passwords
+  @@deny_old_passwords = true
 end
 
 # an security extension for devise
