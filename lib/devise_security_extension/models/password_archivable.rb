@@ -18,7 +18,7 @@ module Devise # :nodoc:
       module InstanceMethods # :nodoc:
 
         def validate_password_archive
-          self.errors.add(attr, :taken_in_past) if password_archive_included?
+          self.errors.add(:password, :taken_in_past) if password_archive_included?
         end
 
         # validate is the password used in the past
