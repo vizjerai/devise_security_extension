@@ -30,6 +30,8 @@ after bundle execute
     t.password_expirable
   end
 
+=== Password archive
+
   create_table :old_passwords do
     t.password_archivable
   end
