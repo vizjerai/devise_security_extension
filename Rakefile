@@ -12,7 +12,7 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "devise_security_extension"
+  gem.name = "vizjerai-devise_security_extension"
   gem.homepage = "http://github.com/phatworx/devise_security_extension"
   gem.license = "MIT"
   gem.summary = %Q{an security extension for devise}
