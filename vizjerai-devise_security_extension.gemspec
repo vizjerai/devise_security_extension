@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{vizjerai-devise_security_extension}
-  s.version = "0.3.3"
+  s.version = "0.3.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marco Scholl"]
-  s.date = %q{2011-03-07}
+  s.date = %q{2011-03-08}
   s.description = %q{a gem for extend devise for more password security}
   s.email = %q{team@phatworx.de}
   s.extra_rdoc_files = [
@@ -28,7 +28,6 @@ Gem::Specification.new do |s|
     "app/views/devise/password_expired/show.html.erb",
     "config/locales/de.yml",
     "config/locales/en.yml",
-    "devise_security_extension.gemspec",
     "lib/devise_security_extension.rb",
     "lib/devise_security_extension/controllers/helpers.rb",
     "lib/devise_security_extension/hooks/password_expirable.rb",
@@ -42,7 +41,8 @@ Gem::Specification.new do |s|
     "lib/devise_security_extension/schema.rb",
     "lib/generators/devise_security_extension/install_generator.rb",
     "test/helper.rb",
-    "test/test_devise_security_extension.rb"
+    "test/test_devise_security_extension.rb",
+    "vizjerai-devise_security_extension.gemspec"
   ]
   s.homepage = %q{http://github.com/phatworx/devise_security_extension}
   s.licenses = ["MIT"]
