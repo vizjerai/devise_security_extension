@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{vizjerai-devise_security_extension}
-  s.version = "0.3.7"
+  s.version = "0.3.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marco Scholl"]
-  s.date = %q{2011-03-11}
+  s.date = %q{2011-04-25}
   s.description = %q{a gem for extend devise for more password security}
   s.email = %q{team@phatworx.de}
   s.extra_rdoc_files = [
@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/phatworx/devise_security_extension}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{an security extension for devise}
   s.test_files = [
     "test/helper.rb",
